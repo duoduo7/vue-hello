@@ -5,7 +5,15 @@ const state = {
   ]
 }
 
+const mutations = {
+  addComment (state, { text }) {
+    // 变更状态
+    state.all.push({ text })
+  }
+}
+
 
 export default {
-  state
+  state,
+  mutations
 }

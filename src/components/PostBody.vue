@@ -1,6 +1,7 @@
 <template>
   <div class="post-body">
     postId：{{ postId }}
+    评论数：{{ commentNo }}
   </div>
 </template>
 
@@ -10,6 +11,9 @@
     computed: {
       postId: function () {
         return this.$route.params.id
+      },
+      commentNo: function () {
+        return this.$store.state.comment.all.length
       }
     }
   }
