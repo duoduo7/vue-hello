@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="comment-box">
     <input v-model="text" placeholder="comment">
     <button @click="handleClick">提交评论</button>
     <ul>
@@ -14,15 +14,14 @@
   export default {
     name: 'comment-box',
     data: () => ({
-      text: '',
-      comments: [
-        { text: 'first' },
-        { text: 'second' },
-      ],
+      text: ''
     }),
     computed: {
       reversedComments: function () {
         return this.comments.slice().reverse()
+      },
+      comments: function () {
+        return this.$store.state.comment.all
       }
     },
     methods: {
@@ -34,3 +33,10 @@
     }
   }
 </script>
+
+<style scoped>
+  .comment-box {
+    width: 80%;
+    margin: 20px auto;
+  }
+</style>

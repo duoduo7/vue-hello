@@ -1,7 +1,11 @@
 <template>
   <div class="post">
-    <post-body></post-body>
-    <comment-box></comment-box>
+    <div class="upper">
+      <post-body></post-body>
+    </div>
+    <div class="lower">
+      <comment-box></comment-box>
+    </div>
   </div>
 </template>
 
@@ -21,7 +25,9 @@
 </script>
 
 <style scoped>
-  div {
-    border: 2px solid red;
+  .upper {
+    min-height: 300px;
+    padding: 30px;
+    background-color: #00bcd4;
   }
 </style>
