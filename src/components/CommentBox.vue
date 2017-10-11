@@ -26,9 +26,7 @@
     },
     methods: {
       handleClick: function () {
-        console.log('xxxx', this.text)
-        // this.comments.push({ text: this.text })
-        this.$store.commit('addComment', { text: this.text })
+        this.$store.dispatch({ type: 'addComment',  text: this.text })
         this.text = ''
       }
     }

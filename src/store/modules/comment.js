@@ -1,3 +1,5 @@
+import axios from 'axios'
+
 const state = {
   all: [
     { text: 'first' },
@@ -12,8 +14,20 @@ const mutations = {
   }
 }
 
+const actions = {
+  addComment ( { commit }, { text } ) {
+    axios.post('http://localhost:3008/comments',
+      { text }).then(
+        res => {
+          commit('addComment', { text })
+        }
+      )
+  }
+}
+
 
 export default {
   state,
-  mutations
+  mutations,
+  actions
 }
