@@ -1,18 +1,23 @@
 <template>
   <div class="post">
     hello
-    <post-body></post-body>
+    <post-body :postId="postId"></post-body>
     <comment-box></comment-box>
   </div>
 </template>
 
 <script>
-import CommentBox from './CommentBox'
-import PostBody from './PostBody'
-export default {
-  name: 'post',
-  components: { CommentBox, PostBody }
-}
+  import CommentBox from './CommentBox'
+  import PostBody from './PostBody'
+  export default {
+    name: 'post',
+    components: { CommentBox, PostBody },
+    data: function () {
+      return {
+        postId: '456'
+      }
+    }
+  }
 
 </script>
 
