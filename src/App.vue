@@ -6,6 +6,12 @@
 
 <script>
 
+export default {
+  created: function () {
+    this.$store.dispatch({ type: 'loadComments' })
+  }
+}
+
 </script>
 
 <style >

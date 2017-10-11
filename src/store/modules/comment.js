@@ -1,10 +1,7 @@
 import axios from 'axios'
 
 const state = {
-  all: [
-    { text: 'first' },
-    { text: 'second' }
-  ]
+  all: []
 }
 
 const mutations = {
@@ -22,6 +19,15 @@ const actions = {
           commit('addComment', { text })
         }
       )
+  },
+  loadComments ( { commit } ) {
+    axios.get('http://localhost:3008/comments')
+         .then(
+           res => {
+             console.log(res.data)
+             state.all = res.data
+           }
+         )
   }
 }
 
