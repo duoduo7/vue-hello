@@ -7,6 +7,10 @@
 <script>
   export default {
     name: 'post-body',
-    props: ['postId']
+    computed: {
+      postId: function () {
+        return this.$route.params.id
+      }
+    }
   }
 </script>

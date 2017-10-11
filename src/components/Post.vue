@@ -1,7 +1,6 @@
 <template>
   <div class="post">
-    hello
-    <post-body :postId="postId"></post-body>
+    <post-body></post-body>
     <comment-box></comment-box>
   </div>
 </template>
