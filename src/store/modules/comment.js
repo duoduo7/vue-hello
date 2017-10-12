@@ -5,18 +5,19 @@ const state = {
 }
 
 const mutations = {
-  addComment (state, { text }) {
+  addComment (state, { text, postId }) {
     // 变更状态
-    state.all.push({ text })
+    state.all.push({ text, postId })
   }
 }
 
 const actions = {
-  addComment ( { commit }, { text } ) {
+  addComment ( { commit }, { text, postId } ) {
+    console.log('++++postId+++', postId)
     axios.post('http://localhost:3008/comments',
-      { text }).then(
+      { text, postId }).then(
         res => {
-          commit('addComment', { text })
+          commit('addComment', { text, postId })
         }
       )
   },
@@ -30,7 +31,6 @@ const actions = {
          )
   }
 }
-
 
 export default {
   state,

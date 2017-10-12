@@ -13,16 +13,28 @@
   ],
   "comments": [
     {
+      "postId": 1,
       "text": "444",
       "id": 1
     },
     {
+      "postId": 2,
       "text": "ddds",
       "id": 2
     },
     {
+      "postId": 1,
       "text": "3333",
       "id": 3
+    },
+    {
+      "text": "ddd",
+      "id": 4
+    },
+    {
+      "text": "new comment",
+      "postId": "2",
+      "id": 5
     }
   ]
 }

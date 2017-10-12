@@ -16,17 +16,27 @@
     data: () => ({
       text: ''
     }),
+
     computed: {
+      postId: function () {
+        return this.$route.params.id
+      },
       reversedComments: function () {
         return this.comments.slice().reverse()
       },
       comments: function () {
-        return this.$store.state.comment.all
+        const allComments = this.$store.state.comment.all
+        return allComments.filter(t =>
+          {
+            console.log(this.postId)
+            return t.postId == this.postId
+          }
+        )
       }
     },
     methods: {
       handleClick: function () {
-        this.$store.dispatch({ type: 'addComment',  text: this.text })
+        this.$store.dispatch({ type: 'addComment',  text: this.text, postId: this.postId })
         this.text = ''
       }
     }
