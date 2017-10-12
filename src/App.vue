@@ -9,9 +9,9 @@
 export default {
   created: function () {
     this.$store.dispatch({ type: 'loadComments' })
+    this.$store.dispatch('loadPosts')
   }
 }
-
 </script>
 
 <style >

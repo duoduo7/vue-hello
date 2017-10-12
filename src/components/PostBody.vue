@@ -1,6 +1,7 @@
 <template>
   <div class="post-body">
-    postId：{{ postId }}
+    <h1>{{ title }}</h1>
+    {{ content }}
     评论数：{{ commentNo }}
   </div>
 </template>
@@ -14,6 +15,17 @@
       },
       commentNo: function () {
         return this.$store.state.comment.all.length
+      },
+      post: function () {
+        const posts = this.$store.state.post.all
+        const post = posts.find( t => t.id == this.postId)
+        return post
+      },
+      content: function () {
+        return this.post.content
+      },
+      title: function () {
+        return this.post.title
       }
     }
   }

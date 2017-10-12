@@ -1,6 +1,21 @@
 <template>
   <h1>
-    <router-link to="/post/111">111</router-link>
-    <router-link to="/post/222">222</router-link>
+    <ul>
+      <li v-for="post in posts">
+        <router-link :to="'/post/' + post.id">
+          {{ post.title }}
+        </router-link>
+      </li>
+    </ul>
   </h1>
 </template>
+
+<script>
+  export default {
+    computed: {
+      posts: function () {
+        return this.$store.state.post.all
+      }
+    }
+  }
+</script>
