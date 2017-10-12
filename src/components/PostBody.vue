@@ -1,8 +1,10 @@
 <template>
   <div class="post-body">
-    <h1>{{ title }}</h1>
-    {{ content }}
-    评论数：{{ commentNo }}
+    <div v-if="ready">
+      <h1>{{ title }}</h1>
+      {{ content }}
+      评论数：{{ commentNo }}
+    </div>
   </div>
 </template>
 
@@ -10,6 +12,9 @@
   export default {
     name: 'post-body',
     computed: {
+      ready: function () {
+        return this.post
+      },
       postId: function () {
         return this.$route.params.id
       },
